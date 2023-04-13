@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 5</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <link rel="stylesheet" href="css/stylee.css">
+</head>
+
+<body>
+  <header class="navBarHome">
+    <div class="menuCentrado">
+      <div class="logoHeader">
+        <button id="showIndex" class="btn btn-success"><i class="fa-solid fa-bars"></i></button>
+        <img src="./img/seas.png" alt="uniLogo">
+        <h1>SEAS</h1>
+      </div>
+      <ul>
+        <li class="headerOps"><a href="./index.html"> HOME </a></li>
+        <li class="headerOps"><a href="#"> About </a></li>
+        <li class="headerOps"><a href="./aboutus.html"> Blog </a></li>
+        <li class="headerOps"><a href="./contacto.html"> Contact </a></li>
+      </ul>
+    </div>
+  </header>
+  <div id="st-container" class="st-container">
+    <nav class="st-menu st-effect-1" id="menu-1">
+      <h2 class="icon icon-lab">Java Script</h2>
+      <ul class="">
+        <li><a class="icon icon-data" href="./ejercicio1.html">Ejercicio 1</a></li>
+        <li><a class="icon icon-location" href="./ejercicio2.html">Ejercicio 2</a></li>
+        <li><a class="icon icon-study" href="./ejercicio3.html">Ejercicio 3</a></li>
+        <li><a class="icon icon-photo" href="./ejercicio4.html">Ejercicio 4</a></li>
+        <li><a class="icon icon-wallet" href="./ejercicio5.html">Ejercicio 5</a></li>
+        <li><a class="icon icon-wallet" href="./ejercicio6.html">Ejercicio 6</a></li>
+        <li><a class="icon icon-wallet" href="./ejercicio7.html">Ejercicio 7</a></li>
+        <li><a class="icon icon-wallet" href="./ejercicio8.html">Ejercicio 8</a></li>
+        <li><a class="icon icon-wallet" href="./ejercicio9.html">Ejercicio 9</a></li>
+        <li><a class="icon icon-wallet" href="./ejercicio10.html">Ejercicio 10</a></li>
+        <li><a class="icon icon-wallet" href="./ejercicio11.html">Ejercicio 11</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="st-pusher">
+    <div class="st-content">
+      <!-- this is the wrapper for the content -->
+      <div class="st-content-inner">
+        <!-- extra div for emulating position:fixed of the menu -->
+        <!-- Top Navigation -->
+        <header class="codrops-header">
+          <h1>Guía de Ejercicios<span>Demostración de los mismos</span></h1>
+        </header>
+        <div class="main clearfix" data-effect="st-effect-1">
+          <div id="st-trigger-effects" class="column" data-effect="st-effect-1">
+          </div>
+
+          <div class="columnText">
+            <h1>
+              <b>Demostraciones de los ejercicios</b>
+            </h1>
+            <p class="paragraph_excercises">Ejercicio 5</p>
+            <br>
+            <br>
+            </p>
+            <p>
+              En este ejercicio tenemos que crear una tabla<br>
+              con un color de fondo elegido por el <br>
+              usuario y escribirá un texto en ella con el <br>
+              color elegido por el usuario. Los colores y <br>
+              códigos son los siguientes:<br>
+            </p>
+            <img src="./img/ejercicio5.png" alt="">
+            <p>
+              Si se teclea algún valor distinto a: R, A, Y ó V <br>
+              se definirán estos colores:<br>
+               para la tabla lightgrey y<br>
+               para el texto black.<br>
+              Los colores se pedirán mediante una orden prompt().<br>
+              Si no se elige uno de los colores<br>
+              se tomará un valor por defecto.<br>
+              Una vez que se sepan los colores se crearán la tabla<br>
+              y el texto con la orden<br>
+              document.write()<br>
+            </p>
+            <button id="mostrar" type="button" data-bs-toggle="modal" data-bs-target="#modalEjercicio"> Respuesta
+            </button>
+            <p id="parrafo2"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /main -->
+  </div>
+  <!-- /st-content-inner -->
+  </div>
+  <!-- /st-content -->
+  </div>
+  <!--Modal-->
+  <div class="modal fade" id="modalEjercicio" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content" id="contenidoModal">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Ejercicio 5</h1>
+        </div>
+        <div class="modal-body">
+          <div id="flotante" class="respuesta_ejercicio1">
+            <p> // definimos las variables y solicitamos al usuario que <br>
+              seleccione el color<br>
+              var COLORTABLA= prompt("Elige el Color DE FONDO de la tabla: <br>
+              (R-rosa, A-azul claro, Y-amarillo claro, V-verde claro:", "R");<br>
+              var COLORTEXTO = prompt("Elige el Color del TEXTO: (R-rojo, A-azul, Y-amarillo, V-verde:", "R");<br>
+              switch(COLORTABLA){<br>
+              case 'R':COLORTABLA="hotpink";<br>
+              break;<br>
+              case 'A':COLORTABLA="lightblue";<br>
+              break;<br>
+              case 'Y':COLORTABLA="lightyellow";<br>
+              break;<br>
+              case 'V':COLORTABLA="lightgreen";<br>
+              break;<br>
+              default:COLORTABLA="lightgrey";<br>
+              }<br>
+              switch(COLORTEXTO){<br>
+              case 'R':COLORTEXTO="red";<br>
+              break;<br>
+              case 'A':COLORTEXTO="blue";<br>
+              break;<br>
+              case 'Y':COLORTEXTO="yellow";<br>
+              break;<br>
+              case 'V':COLORTEXTO="green";<br>
+              break;<br>
+              default:COLORTEXTO="black";<br>
+              }<br>
+              document.write("<-CENTER><-TABLE border=2 <br>
+                  bgcolor="+COLORTABLA+">");<br>
+                  document.write("<-TR><-TD><-FONT COLOR="+ COLORTEXTO + ">TEXTO <br>
+                        CON COLOR");<br>
+                        document.write("<- /FONT><- /TD><- /TR>");<br>
+                              document.write("<- /TABLE>");<br>
+                                document.write("COLOR DE FONDO DE LA TABLA : "+ COLORTABLA + <br>
+                                "<BR>");<br>
+                                document.write("COLOR DEL TEXTO : "+ COLORTEXTO +"<- /CENTER>");<br>
+            </p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <h6>About</h6>
+          <p class="text-justify">SEAS Estudios Superiores Abiertos, es el centro de formación online del Grupo San
+            Valero, un gran maestro de la educación con 65 años de experiencia que nos ha transmitido la
+            profesionalidad, calidad y valores que harán que te sientas como en casa.</p>
+        </div>
+
+        <div class="col-xs-6 col-md-3">
+          <h6>Categorii</h6>
+          <ul class="footer-links">
+            <li><a href="#"> Estudios</a></li>
+            <li><a href="#">Carreras</a></li>
+            <li><a href="#">Alumnos</a></li>
+          </ul>
+        </div>
+
+        <div class="col-xs-6 col-md-3">
+          <h6>Quick Links</h6>
+          <ul class="footer-links">
+            <li><a href="#">Dudas</a></li>
+            <li><a href="#">Contacto</a></li>
+            <li><a href="https://ec.europa.eu/consumers/odr/main/index.cfm?event=main.home.chooseLanguage"> Resoluciones
+                Online
+              </a></li>
+            <li><a href="https://anpc.ro/ce-este-sal/">SAL online</a></li>
+            <li><a href="#">Politica de confidencialidad</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-sm-6 col-xs-12">
+          <p class="copyright-text">Copyright &copy; 2023 All Rights Reserved by
+            <a href="#">SEAS</a>.
+          </p>
+        </div>
+
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <ul class="social-icons">
+            <li><a class="facebook" href="#"><i class="fa-brands fa-facebook"></i></a></li>
+            <li><a class="twitter" href="#"> <i class="fa-brands fa-twitter"></i></a></li>
+            <li><a class="linkedin" href="#"><i class="fa-brands fa-instagram"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--SCRIPTS-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+  <script src="./js/jquery-3.6.3.min.js"></script>
+  <script src="js/jss.js"></script>
+</body>
+
+</html>
