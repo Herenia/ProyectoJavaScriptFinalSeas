@@ -67,8 +67,9 @@
 
             <br>
             <p>
-              Nombre y Apellidos: no puede contener números y <br>
-              es la única entrada obligatoria.<br>
+              Realizar un formulario que contenga las siguientes <br>
+              condiciones: <br Nombre y Apellidos: no puede contener números y <br>
+              -Nombre: es la única entrada obligatoria.<br>
               -Edad: sólo puede contener números,<br>
               -el rango de valores válidos es de 0 a 120.<br>
               -Código Postal: sólo puede contener números de cinco dígitos.<br>
@@ -79,178 +80,187 @@
             <button id="mostrar" type="button" data-bs-toggle="modal" data-bs-target="#modalEjercicio"> Respuesta
             </button>
             <p id="parrafo2"></p>
+
+
+            <!--Modal-->
+            <div class="modal fade" id="modalEjercicio" tabindex="-1" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content" id="contenidoModal">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Ejercicio 11</h1>
+                  </div>
+                  <div class="modal-body">
+                    <div id="flotante" class="respuesta_ejercicio1">
+                      <p>
+                        function Validar_datos() { <br>
+                        sw=-1; //variable de control para ver si se producen <br>
+                        errores<br>
+                        if (!Comprobar_nombre()) sw=0; //es erroneo<br>
+                        if (!Comprobar_edad()) sw=1; //es erroneo<br>
+                        if (!Comprobar_codpostal()) sw=3; //es erroneo<br>
+                        if (sw!=-1) {<br>
+                        Cursor(sw);<br>
+                        return false; //hay algún error<br>
+                        } <br>
+                        else return true; //No hay errores, Formulario <br>
+                        verificado<br>
+                        }<br>
+                        //Función que hace que el foco se situe en el campo erróneo y <br>
+                        se seleccione<br>
+                        function Cursor(I) { <br>
+                        document.forms[0].elements[I].focus();<br>
+                        document.forms[0].elements[I].select();<br>
+                        }<br>
+
+                        //Comprobamos si el nombre es correcto<br>
+                        function Comprobar_nombre() { <br>
+                        if (document.forms[0].elements[0].value=="") {<br>
+                        alert("Has de introducir datos en el Nombre y <br>
+                        Apellidos");<br>
+                        return false;<br>
+                        }
+                        //comprobar si hay caracteres numéricos en el nombre <br>
+                        for(i=0;i<document.forms[0].elements[0].value.length; i++)<br><br>
+
+                          if(!isNaN(document.forms[0].elements[0].value.substr(i,i+1))) {<br>
+                          alert("El nombre tiene numeros");<br>
+                          return false;<br>
+                          } <br>
+                          return true; <br>
+                          }<br>
+                          //Comprobamos si la edad es correcta<br>
+                          function Comprobar_edad() {<br>
+                          if (document.forms[0].elements[1].value=="") <br>
+                          return true;<br>
+                          n = document.forms[0].elements[1].value;<br>
+                          if(!Comprobar_numero(n)) <br>
+                          Solución Ejercicio Voluntario Página 2 de 3<br>
+                          return false;<br>
+                          if (parseInt(n)<0 || parseInt(n)>120) {<br>
+                            alert("La EDAD no está en los límites 0 y 120");<br>
+                            return false;<br>
+                            }<br>
+                            return true; <br>
+                            }<br>
+                            //Comprobamos si un dato es numérico<br>
+                            function Comprobar_numero(N) {<br>
+                            if(isNaN(N)) {<br>
+                            alert("Has de introducir números en el campo");<br>
+                            return false;<br>
+                            }<br>
+                            return true;<br>
+                            }<br>
+                            //Comprobamos si el código Postal es correcto<br>
+                            function Comprobar_codpostal() {<br>
+                            if (document.forms[0].elements[3].value=="") <br>
+                            return true;<br>
+                            n = document.forms[0].elements[3].value;<br>
+                            if(!Comprobar_numero(n)) <br>
+                            return false;<br>
+                            if(n.length!=5) {<br>
+                            alert("El Código Postal ha de tener 5 dígitos");<br>
+                            return false;<br>
+                            } <br>
+                            return true;<br>
+                            }<br>
+                      </p>
+                      <form name="formulario" id="ejercicioFormulario">
+                        <h1 id="formH1">Formulario de demostracion</h1>
+                        <div class="inputYErrores">
+                          <input type="text" name="nombApe" placeholder="Nombre y apellido">
+                          <span id="eNombre" class="errorSpan">¡Error!: El nombre y apellido no debe contener
+                            numeros</span>
+                        </div>
+                        <div class="inputYErrores">
+                          <input type="number" name="edad" placeholder="Edad">
+                          <span id="eEdad" class="errorSpan">¡Error!: no debe contener letras, no debe ser un numero
+                            negativo y
+                            mucho menos mayor a 120</span>
+                        </div>
+                        <div class="inputYErrores">
+                          <input type="number" name="codePostal" placeholder="Codigo Postal">
+                          <span id="eCodePostal" class="errorSpan">¡Error!: Solo debe contener numeros, y un maximo de 5
+                            digitos</span>
+                        </div>
+                        <div id="enviarFormHeight">
+                          <input id="enviarForm" class="btn btn-success" type="button" value="Enviar">
+                          <h2 id="msgSuccess">¡Datos enviados!</h2>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button id="btn-cerrar" type="button" class="btn btn-success"
+                      data-bs-dismiss="modal">Cerrar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <!-- /main -->
+        </div>
+        <!-- /st-content-inner -->
+      </div>
+      <!-- /st-content -->
+    </div>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <h6>About</h6>
+            <p class="text-justify">SEAS Estudios Superiores Abiertos, es el centro de formación online del Grupo San
+              Valero, un gran maestro de la educación con 65 años de experiencia que nos ha transmitido la
+              profesionalidad, calidad y valores que harán que te sientas como en casa.</p>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Categorii</h6>
+            <ul class="footer-links">
+              <li><a href="#"> Estudios</a></li>
+              <li><a href="#">Carreras</a></li>
+              <li><a href="#">Alumnos</a></li>
+            </ul>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Quick Links</h6>
+            <ul class="footer-links">
+              <li><a href="#">Dudas</a></li>
+              <li><a href="#">Contacto</a></li>
+              <li><a href="https://ec.europa.eu/consumers/odr/main/index.cfm?event=main.home.chooseLanguage">
+                  Resoluciones Online
+                </a></li>
+              <li><a href="https://anpc.ro/ce-este-sal/">SAL online</a></li>
+              <li><a href="#">Politica de confidencialidad</a></li>
+            </ul>
           </div>
         </div>
+        <hr>
       </div>
-    </div>
-    <!-- /main -->
-  </div>
-  <!-- /st-content-inner -->
-  </div>
-  <!-- /st-content -->
-  </div>
-  <!--Modal-->
-  <div class="modal fade" id="modalEjercicio" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-scrollable">
-      <div class="modal-content" id="contenidoModal">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Ejercicio 11</h1>
-        </div>
-        <div class="modal-body">
-          <div id="flotante" class="respuesta_ejercicio1">
-            <p>
-              function Validar_datos() { <br>
-              sw=-1; //variable de control para ver si se producen <br>
-              errores<br>
-              if (!Comprobar_nombre()) sw=0; //es erroneo<br>
-              if (!Comprobar_edad()) sw=1; //es erroneo<br>
-              if (!Comprobar_codpostal()) sw=3; //es erroneo<br>
-              if (sw!=-1) {<br>
-              Cursor(sw);<br>
-              return false; //hay algún error<br>
-              } <br>
-              else return true; //No hay errores, Formulario <br>
-              verificado<br>
-              }<br>
-              //Función que hace que el foco se situe en el campo erróneo y <br>
-              se seleccione<br>
-              function Cursor(I) { <br>
-              document.forms[0].elements[I].focus();<br>
-              document.forms[0].elements[I].select();<br>
-              }<br>
-
-              //Comprobamos si el nombre es correcto<br>
-              function Comprobar_nombre() { <br>
-              if (document.forms[0].elements[0].value=="") {<br>
-              alert("Has de introducir datos en el Nombre y <br>
-              Apellidos");<br>
-              return false;<br>
-              }
-              //comprobar si hay caracteres numéricos en el nombre <br>
-              for(i=0;i<document.forms[0].elements[0].value.length; i++)<br><br>
-
-                if(!isNaN(document.forms[0].elements[0].value.substr(i,i+1))) {<br>
-                alert("El nombre tiene numeros");<br>
-                return false;<br>
-                } <br>
-                return true; <br>
-                }<br>
-                //Comprobamos si la edad es correcta<br>
-                function Comprobar_edad() {<br>
-                if (document.forms[0].elements[1].value=="") <br>
-                return true;<br>
-                n = document.forms[0].elements[1].value;<br>
-                if(!Comprobar_numero(n)) <br>
-                Solución Ejercicio Voluntario Página 2 de 3<br>
-                return false;<br>
-                if (parseInt(n)<0 || parseInt(n)>120) {<br>
-                  alert("La EDAD no está en los límites 0 y 120");<br>
-                  return false;<br>
-                  }<br>
-                  return true; <br>
-                  }<br>
-                  //Comprobamos si un dato es numérico<br>
-                  function Comprobar_numero(N) {<br>
-                  if(isNaN(N)) {<br>
-                  alert("Has de introducir números en el campo");<br>
-                  return false;<br>
-                  }<br>
-                  return true;<br>
-                  }<br>
-                  //Comprobamos si el código Postal es correcto<br>
-                  function Comprobar_codpostal() {<br>
-                  if (document.forms[0].elements[3].value=="") <br>
-                  return true;<br>
-                  n = document.forms[0].elements[3].value;<br>
-                  if(!Comprobar_numero(n)) <br>
-                  return false;<br>
-                  if(n.length!=5) {<br>
-                  alert("El Código Postal ha de tener 5 dígitos");<br>
-                  return false;<br>
-                  } <br>
-                  return true;<br>
-                  }<br>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+            <p class="copyright-text">Copyright &copy; 2023 All Rights Reserved by
+              <a href="#">SEAS</a>.
             </p>
-            <form name="formulario" id="ejercicioFormulario">
-              <h1 id="formH1">Formulario de demostracion</h1>
-              <div class="inputYErrores">
-                <input type="text" name="nombApe" placeholder="Nombre y apellido">
-                <span id="eNombre" class="errorSpan">¡Error!: El nombre y apellido no debe contener numeros</span>
-              </div>
-              <div class="inputYErrores">
-                <input type="number" name="edad" placeholder="Edad">
-                <span id="eEdad" class="errorSpan">¡Error!: no debe contener letras, no debe ser un numero negativo y
-                  mucho menos mayor a 120</span>
-              </div>
-              <div class="inputYErrores">
-                <input type="number" name="codePostal" placeholder="Codigo Postal">
-                <span id="eCodePostal" class="errorSpan">¡Error!: Solo debe contener numeros, y un maximo de 5
-                  digitos</span>
-              </div>
-              <div id="enviarFormHeight">
-                <input id="enviarForm" class="btn btn-success" type="button" value="Enviar">
-                <h2 id="msgSuccess">¡Datos enviados!</h2>
-              </div>
-            </form>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <ul class="social-icons">
+              <li><a class="facebook" href="#"><i class="fa-brands fa-facebook"></i></a></li>
+              <li><a class="twitter" href="#"> <i class="fa-brands fa-twitter"></i></a></li>
+              <li><a class="linkedin" href="#"><i class="fa-brands fa-instagram"></i></a></li>
+            </ul>
           </div>
         </div>
-        <div class="modal-footer">
-          <button id="btn-cerrar" type="button" class="btn btn-success" data-bs-dismiss="modal">Cerrar</button>
-        </div>
       </div>
-    </div>
+    </footer>
+
   </div>
-
-  <footer class="site-footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12 col-md-6">
-          <h6>About</h6>
-          <p class="text-justify">SEAS Estudios Superiores Abiertos, es el centro de formación online del Grupo San
-            Valero, un gran maestro de la educación con 65 años de experiencia que nos ha transmitido la
-            profesionalidad, calidad y valores que harán que te sientas como en casa.</p>
-        </div>
-
-        <div class="col-xs-6 col-md-3">
-          <h6>Categorii</h6>
-          <ul class="footer-links">
-            <li><a href="#"> Estudios</a></li>
-            <li><a href="#">Carreras</a></li>
-            <li><a href="#">Alumnos</a></li>
-          </ul>
-        </div>
-
-        <div class="col-xs-6 col-md-3">
-          <h6>Quick Links</h6>
-          <ul class="footer-links">
-            <li><a href="#">Dudas</a></li>
-            <li><a href="#">Contacto</a></li>
-            <li><a href="https://ec.europa.eu/consumers/odr/main/index.cfm?event=main.home.chooseLanguage"> Resoluciones Online
-</a></li>
-            <li><a href="https://anpc.ro/ce-este-sal/">SAL online</a></li>
-            <li><a href="#">Politica de confidencialidad</a></li>
-          </ul>
-        </div>
-      </div>
-      <hr>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8 col-sm-6 col-xs-12">
-          <p class="copyright-text">Copyright &copy; 2023 All Rights Reserved by
-            <a href="#">SEAS</a>.
-          </p>
-        </div>
-        <div class="col-md-4 col-sm-6 col-xs-12">
-          <ul class="social-icons">
-            <li><a class="facebook" href="#"><i class="fa-brands fa-facebook"></i></a></li>
-            <li><a class="twitter" href="#"> <i class="fa-brands fa-twitter"></i></a></li>
-            <li><a class="linkedin" href="#"><i class="fa-brands fa-instagram"></i></a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </footer>
+  </div>
+  </div>
   <!--I add scripts of bootstrap, jquery and jss-->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
